@@ -1,6 +1,8 @@
-import { BadgeCheck, LayoutTemplate, Rocket, Send } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, BadgeCheck, LayoutTemplate, Rocket, Send } from "lucide-react";
 
 import { ContactForm } from "@/components/ContactForm";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const features = [
@@ -36,6 +38,17 @@ export default function Home() {
             Ce starter inclut la structure, le style et le formulaire de contact
             avec envoi d&apos;email pour aller vite en production.
           </p>
+          <div className="flex flex-wrap gap-3">
+            <Button asChild>
+              <Link href="/dashboard">
+                Ouvrir le dashboard
+                <ArrowRight />
+              </Link>
+            </Button>
+            <Button asChild variant="outline">
+              <a href="#contact">Tester le formulaire</a>
+            </Button>
+          </div>
 
           <div className="grid gap-4">
             {features.map((feature) => (
@@ -60,7 +73,7 @@ export default function Home() {
           </p>
         </section>
 
-        <section>
+        <section id="contact">
           <ContactForm />
         </section>
       </main>

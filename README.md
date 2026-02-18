@@ -10,6 +10,7 @@ Boilerplate prêt à l'emploi pour lancer rapidement un site vitrine en **Next.j
 - Formulaire de contact + API route
 - Envoi d'email via Resend
 - Template email React prêt à l'usage
+- Dashboard complet prêt à brancher sur tes donnees
 
 ## Démarrage
 
@@ -32,13 +33,15 @@ Définir dans `.env.local`:
 - Formulaire contact: `app/components/ContactForm.tsx`
 - API d'envoi: `app/api/contact/route.ts`
 - Template email: `app/emails/ContactEmail.tsx`
+- Dashboard: `app/dashboard/page.tsx`
 
 ## Vérification rapide
 
 1. Lancer l'app avec `npm run dev`
 2. Ouvrir `http://localhost:3000`
-3. Envoyer le formulaire de contact
-4. Vérifier la réception de l'email sur `CONTACT_TO_EMAIL`
+3. Ouvrir aussi `http://localhost:3000/dashboard`
+4. Envoyer le formulaire de contact
+5. Vérifier la réception de l'email sur `CONTACT_TO_EMAIL`
 
 ## Évolution vers une web app
 
