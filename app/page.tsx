@@ -241,15 +241,15 @@ export default function Home() {
                 <ul className="mt-4 space-y-3 text-sm text-slate-700">
                   <li className="flex items-center gap-3">
                     <Phone className="size-4 text-sky-700" aria-hidden="true" />
-                    +41 22 000 00 00
+                    +41 78 809 61 35
                   </li>
                   <li className="flex items-center gap-3">
                     <Mail className="size-4 text-sky-700" aria-hidden="true" />
-                    contact@novaclean.ch
+                    Info@novacleanservices.ch
                   </li>
                   <li className="flex items-center gap-3">
                     <MapPin className="size-4 text-sky-700" aria-hidden="true" />
-                    Geneve et alentours
+                    Yverdon et Region
                   </li>
                 </ul>
               </article>
@@ -257,7 +257,7 @@ export default function Home() {
               <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_8px_20px_rgba(15,23,42,0.06)]">
                 <h3 className="text-lg font-semibold text-slate-900">Zone d&apos;intervention</h3>
                 <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                  Nous intervenons pour particuliers, entreprises et regies sur Geneve et les communes environnantes,
+                  Nous intervenons pour particuliers, entreprises et regies sur Yverdon et les communes environnantes,
                   avec une organisation flexible selon vos contraintes.
                 </p>
               </article>
@@ -300,9 +300,9 @@ export default function Home() {
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.12em] text-slate-500">Contact</p>
             <ul className="mt-4 space-y-2 text-sm text-slate-400">
-              <li>+41 22 000 00 00</li>
-              <li>contact@novaclean.ch</li>
-              <li>Geneve et region</li>
+              <li>+41 78 809 61 35</li>
+              <li>Info@novacleanservices.ch</li>
+              <li>Yverdon et Region</li>
             </ul>
           </div>
         </div>
