@@ -13,11 +13,12 @@ import {
 export type ContactEmailProps = {
   name: string;
   email: string;
-  company?: string;
+  phone: string;
+  service: string;
   message: string;
 };
 
-export function ContactEmail({ name, email, company, message }: ContactEmailProps) {
+export function ContactEmail({ name, email, phone, service, message }: ContactEmailProps) {
   return (
     <Html>
       <Head />
@@ -47,7 +48,10 @@ export function ContactEmail({ name, email, company, message }: ContactEmailProp
               <strong>Email :</strong> {email}
             </Text>
             <Text style={{ margin: "0 0 16px" }}>
-              <strong>Entreprise :</strong> {company?.trim() ? company : "Non renseignee"}
+              <strong>Telephone :</strong> {phone}
+            </Text>
+            <Text style={{ margin: "0 0 16px" }}>
+              <strong>Service :</strong> {service}
             </Text>
 
             <Hr style={{ borderColor: "#e5e7eb", margin: "16px 0" }} />

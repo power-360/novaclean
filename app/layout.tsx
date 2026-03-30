@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
+
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Boilerplate Vitrine Next.js",
+  title: "Nova Clean | Nettoyage premium pour particuliers, entreprises et regies",
   description:
-    "Boilerplate Next.js pour site vitrine evolutif vers application web.",
+    "Nova Clean propose des prestations de nettoyage et d'entretien haut de gamme: fin de bail, conciergerie, locaux professionnels, chantiers, exterieurs et deneigement.",
 };
 
 export default function RootLayout({

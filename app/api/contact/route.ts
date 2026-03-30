@@ -6,7 +6,8 @@ import { ContactEmail } from "@/emails/ContactEmail";
 type ContactPayload = {
   name?: string;
   email?: string;
-  company?: string;
+  phone?: string;
+  service?: string;
   message?: string;
 };
 
@@ -44,12 +45,19 @@ export async function POST(request: Request) {
 
   const name = payload.name?.trim() ?? "";
   const email = payload.email?.trim() ?? "";
-  const company = payload.company?.trim() ?? "";
+  const phone = payload.phone?.trim() ?? "";
+  const service = payload.service?.trim() ?? "";
   const message = payload.message?.trim() ?? "";
 
-  if (name.length < 2 || message.length < 10 || !isValidEmail(email)) {
+  if (
+    name.length < 2 ||
+    message.length < 10 ||
+    phone.length < 6 ||
+    service.length < 3 ||
+    !isValidEmail(email)
+  ) {
     return NextResponse.json(
-      { message: "Donnees invalides. Verifiez nom, email et message." },
+      { message: "Donnees invalides. Verifiez nom, email, telephone, service et message." },
       { status: 400 },
     );
   }
@@ -62,7 +70,8 @@ export async function POST(request: Request) {
     react: ContactEmail({
       name,
       email,
-      company,
+      phone,
+      service,
       message,
     }),
   });
