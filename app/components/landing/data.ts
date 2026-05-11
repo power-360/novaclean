@@ -4,6 +4,7 @@ import {
   HardHat,
   Home,
   MoveRight,
+  ShieldAlert,
   Shovel,
   Sparkles,
   Sun,
@@ -13,9 +14,11 @@ import {
 } from "lucide-react";
 
 export type ServiceCardItem = {
+  id: string;
   title: string;
   description: string;
   icon: LucideIcon;
+  href: string;
 };
 
 export type ValueItem = {
@@ -32,171 +35,266 @@ export type DetailedService = {
   benefit: string;
 };
 
+export type GalleryPhoto = {
+  src: string;
+  alt: string;
+  label: string;
+  creditLabel: string;
+  creditHref: string;
+};
+
 export const navLinks = [
   { label: "Accueil", href: "#accueil" },
+  { label: "À propos", href: "#a-propos" },
   { label: "Services", href: "#services" },
-  { label: "A propos", href: "#a-propos" },
+  { label: "Galerie", href: "#galerie" },
   { label: "Contact", href: "#contact" },
 ];
 
 export const serviceCards: ServiceCardItem[] = [
   {
-    title: "Nettoyage de fin / debut de bail",
+    id: "service-fin-bail",
+    title: "Nettoyage de fin de bail",
     description:
-      "Une remise en etat minutieuse pour restituer vos biens en toute serenite.",
+      "Une remise en état minutieuse pour restituer votre bien en toute sérénité.",
     icon: Home,
+    href: "#service-fin-bail",
   },
   {
+    id: "service-conciergerie",
     title: "Service de conciergerie",
     description:
-      "Gestion quotidienne fiable et soignee pour residences, bureaux et commerces.",
+      "Gestion quotidienne fiable et soignée pour résidences, bureaux et commerces.",
     icon: Building2,
+    href: "#service-conciergerie",
   },
   {
+    id: "service-locaux",
     title: "Entretien de locaux professionnels",
     description:
-      "Un environnement de travail propre, sain et valorisant pour vos equipes.",
+      "Un environnement de travail propre, sain et valorisant pour vos équipes.",
     icon: Briefcase,
+    href: "#service-locaux",
   },
   {
+    id: "service-chantier",
     title: "Nettoyage de fin de chantier",
     description:
-      "Une finition irreprochable avant livraison ou mise en exploitation.",
+      "Une finition irréprochable avant livraison ou mise en exploitation.",
     icon: HardHat,
+    href: "#service-chantier",
   },
   {
+    id: "service-toitures",
     title: "Nettoyage de toitures & tuiles",
     description:
-      "Protection durable de votre toiture avec un nettoyage adapte aux materiaux.",
+      "Protection durable de votre toiture avec un nettoyage adapté aux matériaux.",
     icon: Sun,
+    href: "#service-toitures",
   },
   {
-    title: "Entretien des espaces exterieurs",
+    id: "service-exterieurs",
+    title: "Entretien des espaces extérieurs",
     description:
-      "Des espaces exterieurs impeccables en toute saison, avec regularite.",
+      "Des espaces extérieurs impeccables en toute saison, avec régularité.",
     icon: Trees,
+    href: "#service-exterieurs",
   },
   {
-    title: "Deneigement et salage",
+    id: "service-neige",
+    title: "Déneigement et salage",
     description:
-      "Des acces degages et securises rapidement pendant les periodes hivernales.",
+      "Des accès dégagés et sécurisés rapidement pendant les périodes hivernales.",
     icon: Shovel,
+    href: "#service-neige",
   },
   {
-    title: "Demenagement & debarras",
+    id: "service-debarras",
+    title: "Déménagement & débarras",
     description:
-      "Un accompagnement organise pour simplifier vos transitions en confiance.",
+      "Un accompagnement organisé pour simplifier vos transitions en confiance.",
     icon: Warehouse,
+    href: "#service-debarras",
+  },
+  {
+    id: "service-exceptionnel",
+    title: "Autres prestations exceptionnelles",
+    description:
+      "Interventions spécifiques après incendie, inondation ou autre sinistre.",
+    icon: ShieldAlert,
+    href: "#service-exceptionnel",
   },
 ];
 
 export const valueItems: ValueItem[] = [
   {
     title: "Un haut niveau d'exigence",
-    description: "Chaque detail compte, chaque intervention est maitrisee.",
+    description: "Chaque détail compte, chaque intervention est maîtrisée.",
     icon: Sparkles,
   },
   {
-    title: "Des solutions adaptees",
-    description: "Nous nous ajustons a vos besoins, reguliers ou specifiques.",
+    title: "Des solutions adaptées",
+    description: "Nous nous ajustons à vos besoins, réguliers ou spécifiques.",
     icon: MoveRight,
   },
   {
-    title: "Une equipe fiable",
-    description: "Des professionnels engages, formes et experimentes.",
+    title: "Une équipe fiable",
+    description: "Des professionnels engagés, formés et expérimentés.",
     icon: Building2,
   },
   {
-    title: "Une reactivite constante",
+    title: "Une réactivité constante",
     description: "Des interventions rapides et une organisation efficace.",
     icon: Shovel,
   },
   {
     title: "Un service sur lequel vous pouvez compter",
-    description: "Simplicite, confiance et tranquillite d'esprit.",
+    description: "Simplicité, confiance et tranquillité d'esprit.",
     icon: Briefcase,
   },
 ];
 
 export const detailedServices: DetailedService[] = [
   {
-    id: "service-bail",
-    title: "Nettoyage de fin / debut de bail",
+    id: "service-fin-bail",
+    title: "Nettoyage de fin de bail",
     shortIntro:
-      "Simplifiez votre transition grace a un nettoyage soigne, a la hauteur des exigences de restitution.",
+      "Simplifiez votre transition grâce à un nettoyage soigné, à la hauteur des exigences de restitution.",
     paragraph:
-      "Le nettoyage de fin de bail est une etape essentielle lors de la restitution d'un bien locatif. Il necessite une attention particuliere afin de garantir un logement impeccable, conforme aux attentes des regies et proprietaires. Nous intervenons avec methode et precision pour assurer une remise en etat complete, en portant une attention particuliere a chaque detail, afin de vous permettre d'aborder votre etat des lieux en toute serenite.",
+      "Le nettoyage de fin de bail est une étape essentielle lors de la restitution d'un bien locatif. Il nécessite une attention particulière afin de garantir un logement impeccable, conforme aux attentes des régies et des propriétaires. Nous intervenons avec méthode et précision pour assurer une remise en état complète, en portant une attention soutenue à chaque détail.",
     benefit:
-      "Benefice client: un resultat maitrise, un gain de temps considerable et une tranquillite d'esprit totale au moment de remettre les cles.",
+      "Bénéfice client : un résultat maîtrisé, un gain de temps considérable et une tranquillité d'esprit totale au moment de remettre les clés.",
   },
   {
     id: "service-conciergerie",
     title: "Service de conciergerie",
     shortIntro:
-      "Offrez a vos immeubles un service de conciergerie fiable, soigne et a la hauteur de vos attentes.",
+      "Offrez à vos immeubles un service de conciergerie fiable, soigné et à la hauteur de vos attentes.",
     paragraph:
-      "Nous assurons l'entretien et la gestion quotidienne de vos residences, bureaux et surfaces commerciales, avec une approche rigoureuse et un reel souci du detail. Notre objectif: garantir des espaces propres, fonctionnels et agreables a vivre pour tous les occupants. Grace a notre flexibilite, nous nous adaptons a chaque situation: contrats reguliers, interventions occasionnelles ou remplacement de concierge.",
+      "Nous assurons l'entretien et la gestion quotidienne de vos résidences, bureaux et surfaces commerciales, avec une approche rigoureuse et un réel souci du détail. Notre objectif est de garantir des espaces propres, fonctionnels et agréables pour les occupants. Grâce à notre flexibilité, nous nous adaptons à chaque situation : contrats réguliers, interventions occasionnelles ou remplacement de concierge.",
     benefit:
-      "Benefice client: une continuite de service irreprochable, meme en cas d'absence.",
+      "Bénéfice client : une continuité de service irréprochable, même en cas d'absence.",
   },
   {
     id: "service-locaux",
     title: "Entretien de vos locaux professionnels",
-    shortIntro: "Des espaces propres, sains et valorises au quotidien.",
+    shortIntro: "Des espaces propres, sains et valorisés au quotidien.",
     paragraph:
-      "Nous assurons l'entretien de tous types de locaux: bureaux, commerces, etablissements medicaux, ecoles et restaurants. Nos prestations incluent le nettoyage des sols et surfaces, l'entretien des sanitaires, le depoussierage et le maintien general de la proprete de vos espaces. Nous proposons un service fiable, rigoureux et professionnel, avec un niveau de qualite constant.",
+      "Nous assurons l'entretien de tous types de locaux : bureaux, commerces, établissements médicaux, écoles et restaurants. Nos prestations incluent le nettoyage des sols et surfaces, l'entretien des sanitaires, le dépoussiérage et le maintien général de la propreté de vos espaces. Nous garantissons un service fiable, rigoureux et professionnel.",
     benefit:
-      "Benefice client: une image professionnelle renforcee et un cadre de travail plus agreable pour tous.",
+      "Bénéfice client : une image professionnelle renforcée et un cadre de travail plus agréable pour tous.",
   },
   {
     id: "service-chantier",
     title: "Nettoyage de fin de chantier",
     shortIntro:
-      "Offrez a vos espaces une remise en etat irreprochable apres travaux.",
+      "Offrez à vos espaces une remise en état irréprochable après travaux.",
     paragraph:
-      "Le nettoyage de fin de chantier permet de reveler pleinement la qualite de vos espaces avant leur livraison ou leur mise en service. Nous intervenons avec exigence afin de garantir un rendu parfaitement propre, soigne et pret a etre occupe.",
+      "Le nettoyage de fin de chantier permet de révéler pleinement la qualité de vos espaces avant leur livraison ou leur mise en service. Nous intervenons avec exigence afin de garantir un rendu parfaitement propre, soigné et prêt à être occupé.",
     benefit:
-      "Benefice client: une livraison valorisee et des locaux immediatement exploitables.",
+      "Bénéfice client : une livraison valorisée et des locaux immédiatement exploitables.",
   },
   {
     id: "service-toitures",
     title: "Nettoyage de toitures & tuiles",
     shortIntro:
-      "Preservez durablement l'etat, l'esthetique et la solidite de vos toitures grace a un entretien professionnel et adapte.",
+      "Préservez durablement l'état, l'esthétique et la solidité de vos toitures grâce à un entretien professionnel adapté.",
     paragraph:
-      "Avec le temps, mousses, lichens et salissures peuvent alterer leur apparence et fragiliser leur structure. Nos interventions permettent d'eliminer efficacement ces depots tout en respectant les materiaux, afin de prolonger la duree de vie de votre toiture. Nous realisons egalement le nettoyage de panneaux solaires pour optimiser leur rendement et conserver leur performance dans le temps.",
+      "Avec le temps, mousses, lichens et salissures peuvent altérer l'apparence de la toiture et fragiliser sa structure. Nos interventions permettent d'éliminer efficacement ces dépôts tout en respectant les matériaux, afin de prolonger la durée de vie de votre toiture. Nous réalisons également le nettoyage de panneaux solaires pour optimiser leur rendement.",
     benefit:
-      "Benefice client: une toiture protegee, plus durable et visuellement soignee.",
+      "Bénéfice client : une toiture protégée, plus durable et visuellement soignée.",
   },
   {
     id: "service-exterieurs",
-    title: "Entretien de vos espaces exterieurs",
-    shortIntro: "Des exterieurs soignes et valorises toute l'annee.",
+    title: "Entretien de vos espaces extérieurs",
+    shortIntro: "Des extérieurs soignés et valorisés toute l'année.",
     paragraph:
-      "Nous assurons l'entretien avec exigence afin de preserver la proprete, l'esthetique et l'harmonie des espaces exterieurs dans le temps. Chaque prestation est realisee avec rigueur et precision.",
+      "Nous assurons l'entretien avec exigence afin de préserver la propreté, l'esthétique et l'harmonie de vos espaces extérieurs dans le temps. Chaque prestation est réalisée avec rigueur et précision, selon vos contraintes.",
     benefit:
-      "Benefice client: des abords accueillants qui valorisent durablement votre bien.",
+      "Bénéfice client : des abords accueillants qui valorisent durablement votre bien.",
   },
   {
     id: "service-neige",
-    title: "Deneigement et salage",
+    title: "Déneigement et salage",
     shortIntro:
-      "Assurez la securite et l'accessibilite de vos espaces exterieurs en toute saison hivernale.",
+      "Assurez la sécurité et l'accessibilité de vos espaces extérieurs en saison hivernale.",
     paragraph:
-      "Nous intervenons avec reactivite pour le deneigement et le traitement des surfaces. Nous garantissons des acces degages, surs et praticables.",
+      "Nous intervenons avec réactivité pour le déneigement et le traitement des surfaces glissantes. Notre objectif est de garantir des accès dégagés, sûrs et praticables pour vos résidents, clients et collaborateurs.",
     benefit:
-      "Benefice client: des deplacements plus sereins pour vos occupants, clients et collaborateurs.",
+      "Bénéfice client : des déplacements plus sereins et une continuité d'activité renforcée.",
   },
   {
     id: "service-debarras",
-    title: "Demenagement & debarras",
+    title: "Déménagement & débarras",
     shortIntro:
-      "Simplifiez vos transitions grace a un service complet, fiable et parfaitement maitrise.",
+      "Simplifiez vos transitions grâce à un service complet, fiable et parfaitement maîtrisé.",
     paragraph:
-      "Nous accompagnons les projets de demenagement ainsi que le debarras de logements ou locaux. Chaque mission est realisee avec soin et organisation.",
+      "Nous accompagnons les projets de déménagement ainsi que le débarras de logements ou de locaux professionnels. Chaque mission est réalisée avec soin et organisation pour vous faire gagner du temps.",
     benefit:
-      "Benefice client: un processus simplifie, rapide et sans stress inutile.",
+      "Bénéfice client : un processus simplifié, rapide et sans stress inutile.",
+  },
+  {
+    id: "service-exceptionnel",
+    title: "Autres prestations exceptionnelles",
+    shortIntro:
+      "Des interventions ciblées pour les situations urgentes ou non standards.",
+    paragraph:
+      "Nous proposons des prestations exceptionnelles, notamment après incendie, inondation ou autre sinistre. Chaque intervention est préparée avec méthode pour remettre les lieux en état dans les meilleurs délais, en coordination avec vos contraintes.",
+    benefit:
+      "Bénéfice client : une prise en charge rapide, structurée et rassurante dans les situations sensibles.",
   },
 ];
 
-export const serviceSelectOptions = detailedServices.map((service) => service.title);
+export const galleryPhotos: GalleryPhoto[] = [
+  {
+    src: "https://images.unsplash.com/photo-1774979161326-6ba6ed3a1864?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1800",
+    alt: "Équipe de nettoyage sur façade vitrée en hauteur.",
+    label: "Interventions spécialisées en extérieur",
+    creditLabel: "Adhitya Sibikumar / Unsplash",
+    creditHref:
+      "https://unsplash.com/photos/two-window-cleaners-work-on-a-tall-building-BXsBr9a_z7E",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1762008310482-ac087b26c1a2?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1800",
+    alt: "Nettoyage d'un espace d'entrée commercial.",
+    label: "Entretien régulier de sites professionnels",
+    creditLabel: "MAK / Unsplash",
+    creditHref:
+      "https://unsplash.com/photos/two-people-cleaning-outside-a-building-entrance-bgIMFj7i6Ec",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1707897283710-4beef9a1b066?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1800",
+    alt: "Agent en intervention avec un jet d'eau haute pression.",
+    label: "Nettoyage intensif et remise en état",
+    creditLabel: "The ProClean Team / Unsplash",
+    creditHref:
+      "https://unsplash.com/photos/a-man-is-cleaning-the-street-with-a-hose-DyYMrJYXE84",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1668600418929-118f4d7fd53a?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1800",
+    alt: "Professionnel en tenue de protection pour nettoyage technique.",
+    label: "Prestations techniques et zones sensibles",
+    creditLabel: "Toon Lambrechts / Unsplash",
+    creditHref:
+      "https://unsplash.com/photos/a-person-wearing-a-mask-and-gloves-3trrmy1-8bU",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1550963295-019d8a8a61c5?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1800",
+    alt: "Matériel de nettoyage professionnel prêt à l'emploi.",
+    label: "Équipement professionnel adapté",
+    creditLabel: "Crystal Chabot / Unsplash",
+    creditHref: "https://unsplash.com/photos/clear-spray-bottle-9gzU1mtTzWM",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1740511106124-625b02369494?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1800",
+    alt: "Intervention de nettoyage urbain sur voie extérieure.",
+    label: "Interventions exceptionnelles sur mesure",
+    creditLabel: "Jose Manuel Esp / Unsplash",
+    creditHref:
+      "https://unsplash.com/photos/a-man-in-a-yellow-and-black-uniform-is-cleaning-the-street-QC5CzfCxNkA",
+  },
+];
+
+export const serviceSelectOptions = detailedServices.map(
+  (service) => service.title,
+);

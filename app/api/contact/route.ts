@@ -26,7 +26,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         message:
-          "Configuration manquante: RESEND_API_KEY et CONTACT_TO_EMAIL doivent etre definies.",
+          "Configuration manquante : RESEND_API_KEY et CONTACT_TO_EMAIL doivent être définies.",
       },
       { status: 500 },
     );
@@ -57,7 +57,7 @@ export async function POST(request: Request) {
     !isValidEmail(email)
   ) {
     return NextResponse.json(
-      { message: "Donnees invalides. Verifiez nom, email, telephone, service et message." },
+      { message: "Données invalides. Vérifiez nom, email, téléphone, service et message." },
       { status: 400 },
     );
   }
@@ -78,13 +78,13 @@ export async function POST(request: Request) {
 
   if (error) {
     return NextResponse.json(
-      { message: "Erreur lors de l'envoi de l'email. Veuillez reessayer." },
+      { message: "Erreur lors de l'envoi de l'email. Veuillez réessayer." },
       { status: 500 },
     );
   }
 
   return NextResponse.json(
-    { message: "Message envoye avec succes." },
+    { message: "Message envoyé avec succès." },
     { status: 200 },
   );
 }

@@ -46,7 +46,7 @@ export function ContactForm() {
 
       setStatus({
         type: "success",
-        message: data.message ?? "Message envoye avec succes.",
+        message: data.message ?? "Message envoyé avec succès.",
       });
       event.currentTarget.reset();
     } catch (error) {
@@ -89,7 +89,7 @@ export function ContactForm() {
           />
         </div>
         <div className="grid gap-2">
-          <Label htmlFor="phone">Telephone</Label>
+          <Label htmlFor="phone">Téléphone</Label>
           <Input
             id="phone"
             name="phone"
@@ -102,7 +102,7 @@ export function ContactForm() {
       </div>
 
       <div className="grid gap-2">
-        <Label htmlFor="service">Service souhaite</Label>
+        <Label htmlFor="service">Service souhaité</Label>
         <select
           id="service"
           name="service"
@@ -111,7 +111,7 @@ export function ContactForm() {
           className="h-11 w-full rounded-md border border-slate-300 bg-white px-3 text-sm text-slate-700 outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-100"
         >
           <option value="" disabled>
-            Selectionnez un service
+            Sélectionnez un service
           </option>
           {serviceSelectOptions.map((option) => (
             <option key={option} value={option}>
@@ -129,7 +129,7 @@ export function ContactForm() {
           required
           minLength={10}
           rows={6}
-          placeholder="Parlez-nous de votre besoin, de la surface et du delai souhaite."
+          placeholder="Parlez-nous de votre besoin, de la surface et du délai souhaité."
           className="border-slate-300 bg-white"
         />
       </div>

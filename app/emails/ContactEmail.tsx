@@ -48,7 +48,7 @@ export function ContactEmail({ name, email, phone, service, message }: ContactEm
               <strong>Email :</strong> {email}
             </Text>
             <Text style={{ margin: "0 0 16px" }}>
-              <strong>Telephone :</strong> {phone}
+              <strong>Téléphone :</strong> {phone}
             </Text>
             <Text style={{ margin: "0 0 16px" }}>
               <strong>Service :</strong> {service}
