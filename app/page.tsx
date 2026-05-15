@@ -105,7 +105,7 @@ export default function Home() {
       <main>
         <section
           id="accueil"
-          className="relative overflow-hidden border-b border-blue-200 bg-gradient-to-b from-blue-950 via-blue-900 to-slate-950"
+          className="relative overflow-hidden border-b border-slate-800 bg-slate-950"
         >
           <div
             className="absolute -top-24 right-0 h-72 w-72 rounded-full bg-blue-300/25 blur-3xl"
@@ -172,7 +172,7 @@ export default function Home() {
             </div>
 
             <aside className="animate-fade-up rounded-3xl border border-white/15 bg-white/10 p-6 backdrop-blur-sm sm:p-8">
-              <div className="rounded-2xl border border-blue-200/20 bg-blue-950/70 p-6">
+              <div className="rounded-2xl border border-slate-700/70 bg-slate-950/70 p-6">
                 <p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-200">
                   Nova Clean Services
                 </p>
@@ -287,7 +287,7 @@ export default function Home() {
           eyebrow="Mise en valeur"
           title="Valorisez vos espaces au quotidien"
           description="Qu'il s'agisse d'un entretien régulier, d'une remise en état ou d'une intervention spécifique, nous vous apportons des solutions efficaces et durables. Avec Nova Clean Services, vos espaces restent propres, accueillants et valorisés, en toute circonstance."
-          className="bg-blue-950"
+          className="bg-slate-950"
           inverted
         >
           <div className="grid gap-6 lg:grid-cols-2 lg:items-center">
@@ -304,7 +304,7 @@ export default function Home() {
                 valorisants.
               </p>
             </div>
-            <div className="relative overflow-hidden rounded-3xl border border-blue-200/20 bg-gradient-to-br from-blue-500/30 via-blue-700/20 to-slate-950 p-10">
+            <div className="relative overflow-hidden rounded-3xl border border-slate-700/70 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950 p-10">
               <div
                 className="absolute -right-8 -top-10 h-44 w-44 rounded-full bg-blue-300/35 blur-3xl"
                 aria-hidden="true"
@@ -415,7 +415,7 @@ export default function Home() {
                 </p>
               </article>
 
-              <article className="rounded-2xl border border-blue-900 bg-blue-950 p-6 text-white shadow-[0_10px_24px_rgba(15,23,42,0.2)]">
+              <article className="rounded-2xl border border-slate-800 bg-slate-950 p-6 text-white shadow-[0_10px_24px_rgba(15,23,42,0.2)]">
                 <h3 className="text-lg font-semibold">Nova Clean Services</h3>
                 <p className="mt-2 text-sm text-slate-200">
                   Entreprise de nettoyage suisse romande.
