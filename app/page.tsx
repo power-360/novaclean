@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 
 import { ContactForm } from "@/components/ContactForm";
+import { HeaderScrollAccent } from "@/components/landing/HeaderScrollAccent";
 import { Section } from "@/components/landing/Section";
 import {
   detailedServices,
@@ -62,10 +63,10 @@ function BrandMark({ dark = false }: { dark?: boolean }) {
 export default function Home() {
   return (
     <div className="bg-slate-50 text-slate-900">
-      <header className="sticky top-0 z-40 border-b border-slate-200/70 bg-white/95 backdrop-blur">
+      <header className="sticky top-0 z-40 border-b border-slate-800 bg-slate-950/95 text-white shadow-[0_12px_30px_rgba(2,6,23,0.22)] backdrop-blur">
         <div className="mx-auto flex h-20 w-full max-w-6xl items-center justify-between px-6">
           <a href="#accueil" className="flex items-center gap-3">
-            <BrandMark />
+            <BrandMark dark />
           </a>
 
           <nav className="hidden items-center gap-8 lg:flex">
@@ -73,7 +74,7 @@ export default function Home() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-slate-600 transition-colors hover:text-slate-950"
+                className="text-sm font-medium text-slate-300 transition-colors hover:text-white"
               >
                 {link.label}
               </a>
@@ -82,24 +83,25 @@ export default function Home() {
 
           <Button
             asChild
-            className="hidden h-10 rounded-full bg-blue-700 px-5 text-sm font-semibold text-white hover:bg-blue-800 sm:inline-flex"
+            className="hidden h-10 rounded-full bg-white px-5 text-sm font-semibold text-slate-950 hover:bg-slate-200 sm:inline-flex"
           >
             <a href="#contact">Demander un devis</a>
           </Button>
         </div>
-        <nav className="border-t border-slate-200/80 lg:hidden">
+        <nav className="border-t border-slate-800 lg:hidden">
           <div className="mx-auto flex w-full max-w-6xl items-center gap-5 overflow-x-auto px-6 py-3">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="shrink-0 text-sm font-medium text-slate-600 transition-colors hover:text-slate-950"
+                className="shrink-0 text-sm font-medium text-slate-300 transition-colors hover:text-white"
               >
                 {link.label}
               </a>
             ))}
           </div>
         </nav>
+        <HeaderScrollAccent />
       </header>
 
       <main>
