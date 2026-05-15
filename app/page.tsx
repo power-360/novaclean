@@ -14,8 +14,8 @@ import { ContactForm } from "@/components/ContactForm";
 import { Section } from "@/components/landing/Section";
 import {
   detailedServices,
-  galleryPhotos,
   navLinks,
+  galleryPhotos,
   serviceCards,
   valueItems,
 } from "@/components/landing/data";
@@ -26,16 +26,13 @@ import {
 } from "@/components/landing/ServiceCards";
 import { Button } from "@/components/ui/button";
 
-const logoUrl =
-  "https://www.dropbox.com/scl/fi/ij4pdrhg54t92f7p1oxzl/1b2ce7d9-094c-4de3-887b-fb3d0ec20d24-modifi.JPG?rlkey=zx1x6vz3w6axb5ne3svo9vl90&st=4pi5r6ne&raw=1";
-
 function BrandMark({ dark = false }: { dark?: boolean }) {
   return (
     <div className="flex items-center gap-3">
       <div>
         <Image
           src={`/logo.svg`}
-          alt="Logo Nova Clean"
+          alt="Logo Nova Clean Services"
           width={90}
           height={90}
           className="h-15 w-15 object-cover rounded-xl"
@@ -48,7 +45,7 @@ function BrandMark({ dark = false }: { dark?: boolean }) {
             dark ? "text-slate-300" : "text-slate-500"
           }`}
         >
-          Nova Clean
+          Nova Clean Services
         </p>
         <p
           className={`text-base font-semibold leading-none ${
@@ -85,7 +82,7 @@ export default function Home() {
 
           <Button
             asChild
-            className="hidden h-10 rounded-full bg-slate-900 px-5 text-sm font-semibold text-white hover:bg-slate-800 sm:inline-flex"
+            className="hidden h-10 rounded-full bg-blue-700 px-5 text-sm font-semibold text-white hover:bg-blue-800 sm:inline-flex"
           >
             <a href="#contact">Demander un devis</a>
           </Button>
@@ -108,40 +105,40 @@ export default function Home() {
       <main>
         <section
           id="accueil"
-          className="relative overflow-hidden border-b border-slate-200 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-900"
+          className="relative overflow-hidden border-b border-blue-200 bg-gradient-to-b from-blue-950 via-blue-900 to-slate-950"
         >
           <div
-            className="absolute -top-24 right-0 h-72 w-72 rounded-full bg-cyan-400/20 blur-3xl"
+            className="absolute -top-24 right-0 h-72 w-72 rounded-full bg-blue-300/25 blur-3xl"
             aria-hidden="true"
           />
           <div
-            className="absolute left-1/3 top-40 h-80 w-80 rounded-full bg-sky-500/10 blur-3xl"
+            className="absolute left-1/3 top-40 h-80 w-80 rounded-full bg-blue-500/15 blur-3xl"
             aria-hidden="true"
           />
           <div className="mx-auto grid w-full max-w-6xl gap-12 px-6 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:py-24">
             <div className="space-y-8">
-              <p className="inline-flex rounded-full border border-cyan-300/30 bg-cyan-300/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-cyan-100">
+              <p className="inline-flex rounded-full border border-blue-300/30 bg-blue-300/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-blue-100">
                 Entreprise de nettoyage suisse romande
               </p>
               <h1 className="text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
                 L&apos;excellence au service de vos espaces
               </h1>
               <p className="max-w-2xl text-pretty text-base leading-relaxed text-slate-200 sm:text-lg">
-                Bienvenue chez Nova Clean. Nous accompagnons particuliers,
-                entreprises et régies dans l&apos;entretien et la mise en valeur
-                de leurs espaces partout en Suisse romande.
+                Bienvenue chez Nova Clean Services. Nous accompagnons
+                particuliers, entreprises et régies dans l&apos;entretien et la
+                mise en valeur de leurs espaces partout en Suisse romande.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Button
                   asChild
-                  className="h-11 rounded-full bg-cyan-400 px-6 text-sm font-semibold text-slate-950 hover:bg-cyan-300"
+                  className="h-11 rounded-full bg-blue-500 px-6 text-sm font-semibold text-white hover:bg-blue-400"
                 >
                   <a href="#contact">Demander un devis</a>
                 </Button>
                 <Button
                   asChild
                   variant="outline"
-                  className="h-11 rounded-full border-cyan-100/40 bg-white/5 px-6 text-sm font-semibold text-white hover:bg-white/10"
+                  className="h-11 rounded-full border-blue-100/40 bg-white/5 px-6 text-sm font-semibold text-white hover:bg-white/10"
                 >
                   <a
                     href="#services"
@@ -155,18 +152,18 @@ export default function Home() {
               <div className="grid gap-4 text-sm text-slate-200 sm:grid-cols-3">
                 <p className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-3">
                   <ShieldCheck
-                    className="size-4 text-cyan-300"
+                    className="size-4 text-blue-300"
                     aria-hidden="true"
                   />
                   Processus rigoureux
                 </p>
                 <p className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-3">
-                  <Clock3 className="size-4 text-cyan-300" aria-hidden="true" />
+                  <Clock3 className="size-4 text-blue-300" aria-hidden="true" />
                   Interventions rapides
                 </p>
                 <p className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-3">
                   <CheckCircle2
-                    className="size-4 text-cyan-300"
+                    className="size-4 text-blue-300"
                     aria-hidden="true"
                   />
                   Qualité constante
@@ -175,9 +172,9 @@ export default function Home() {
             </div>
 
             <aside className="animate-fade-up rounded-3xl border border-white/15 bg-white/10 p-6 backdrop-blur-sm sm:p-8">
-              <div className="rounded-2xl border border-cyan-200/20 bg-slate-950/60 p-6">
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-cyan-200">
-                  Nova Clean
+              <div className="rounded-2xl border border-blue-200/20 bg-blue-950/70 p-6">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-200">
+                  Nova Clean Services
                 </p>
                 <h2 className="mt-3 text-2xl font-semibold text-white">
                   Des espaces impeccables, sans compromis
@@ -189,7 +186,7 @@ export default function Home() {
               </div>
               <div className="mt-5 grid gap-4 sm:grid-cols-2">
                 <div className="rounded-2xl border border-white/15 bg-white/5 p-5">
-                  <p className="text-3xl font-semibold text-cyan-300">
+                  <p className="text-3xl font-semibold text-blue-300">
                     {serviceCards.length}
                   </p>
                   <p className="mt-1 text-sm text-slate-200">
@@ -197,7 +194,7 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="rounded-2xl border border-white/15 bg-white/5 p-5">
-                  <p className="text-3xl font-semibold text-cyan-300">24h</p>
+                  <p className="text-3xl font-semibold text-blue-300">24h</p>
                   <p className="mt-1 text-sm text-slate-200">réponse devis</p>
                 </div>
               </div>
@@ -208,8 +205,8 @@ export default function Home() {
         <Section
           id="a-propos"
           eyebrow="Présentation"
-          title="Nova Clean, votre partenaire propreté au quotidien"
-          description="Chez Nova Clean, nous accompagnons particuliers, entreprises et régies dans l'entretien et la mise en valeur de leurs espaces. Grâce à une approche professionnelle et un souci constant du détail, nous garantissons des résultats à la hauteur de vos exigences. Notre engagement : vous offrir des environnements propres, sains et parfaitement entretenus, tout en vous simplifiant le quotidien."
+          title="Nova Clean Services, votre partenaire propreté au quotidien"
+          description="Chez Nova Clean Services, nous accompagnons particuliers, entreprises et régies dans l'entretien et la mise en valeur de leurs espaces. Grâce à une approche professionnelle et un souci constant du détail, nous garantissons des résultats à la hauteur de vos exigences. Notre engagement : vous offrir des environnements propres, sains et parfaitement entretenus, tout en vous simplifiant le quotidien."
         >
           <div className="grid gap-6 md:grid-cols-3">
             {[
@@ -237,47 +234,49 @@ export default function Home() {
           <ServiceGrid items={serviceCards} />
         </Section>
 
-        <Section
-          id="galerie"
-          eyebrow="Galerie"
-          title="Exemples d'interventions en images"
-          description="Photos de démonstration libres de droit (Unsplash), remplaçables progressivement par vos propres réalisations."
-        >
-          <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
-            {galleryPhotos.map((photo, index) => (
-              <figure
-                key={photo.src}
-                className="animate-fade-up overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_12px_26px_rgba(15,23,42,0.08)]"
-                style={{ animationDelay: `${index * 80}ms` }}
-              >
-                <Image
-                  src={photo.src}
-                  alt={photo.alt}
-                  width={1200}
-                  height={900}
-                  className="h-56 w-full object-cover sm:h-64"
-                />
-                <figcaption className="space-y-1 p-4">
-                  <p className="text-sm font-semibold text-slate-900">
-                    {photo.label}
-                  </p>
-                  <a
-                    href={photo.creditHref}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-xs text-sky-700 underline-offset-2 hover:underline"
-                  >
-                    {photo.creditLabel}
-                  </a>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-        </Section>
+        {false && (
+          <Section
+            id="galerie"
+            eyebrow="Galerie"
+            title="Exemples d'interventions en images"
+            description="Photos de démonstration libres de droit (Unsplash), remplaçables progressivement par vos propres réalisations."
+          >
+            <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+              {galleryPhotos.map((photo, index) => (
+                <figure
+                  key={photo.src}
+                  className="animate-fade-up overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_12px_26px_rgba(15,23,42,0.08)]"
+                  style={{ animationDelay: `${index * 80}ms` }}
+                >
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    width={1200}
+                    height={900}
+                    className="h-56 w-full object-cover sm:h-64"
+                  />
+                  <figcaption className="space-y-1 p-4">
+                    <p className="text-sm font-semibold text-slate-900">
+                      {photo.label}
+                    </p>
+                    <a
+                      href={photo.creditHref}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-xs text-sky-700 underline-offset-2 hover:underline"
+                    >
+                      {photo.creditLabel}
+                    </a>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </Section>
+        )}
 
         <Section
           id="difference"
-          eyebrow="Pourquoi Nova Clean"
+          eyebrow="Pourquoi Nova Clean Services"
           title="Notre différence"
         >
           <ValueGrid items={valueItems} />
@@ -287,13 +286,13 @@ export default function Home() {
           id="valorisation"
           eyebrow="Mise en valeur"
           title="Valorisez vos espaces au quotidien"
-          description="Qu'il s'agisse d'un entretien régulier, d'une remise en état ou d'une intervention spécifique, nous vous apportons des solutions efficaces et durables. Avec Nova Clean, vos espaces restent propres, accueillants et valorisés, en toute circonstance."
-          className="bg-slate-900"
+          description="Qu'il s'agisse d'un entretien régulier, d'une remise en état ou d'une intervention spécifique, nous vous apportons des solutions efficaces et durables. Avec Nova Clean Services, vos espaces restent propres, accueillants et valorisés, en toute circonstance."
+          className="bg-blue-950"
           inverted
         >
           <div className="grid gap-6 lg:grid-cols-2 lg:items-center">
             <div className="rounded-3xl border border-slate-700/80 bg-slate-800 p-8">
-              <p className="text-sm uppercase tracking-[0.14em] text-cyan-300">
+              <p className="text-sm uppercase tracking-[0.14em] text-blue-300">
                 Approche professionnelle
               </p>
               <h3 className="mt-4 text-3xl font-semibold tracking-tight text-white">
@@ -305,13 +304,13 @@ export default function Home() {
                 valorisants.
               </p>
             </div>
-            <div className="relative overflow-hidden rounded-3xl border border-cyan-200/20 bg-gradient-to-br from-cyan-400/25 via-sky-500/15 to-slate-900 p-10">
+            <div className="relative overflow-hidden rounded-3xl border border-blue-200/20 bg-gradient-to-br from-blue-500/30 via-blue-700/20 to-slate-950 p-10">
               <div
-                className="absolute -right-8 -top-10 h-44 w-44 rounded-full bg-cyan-300/35 blur-3xl"
+                className="absolute -right-8 -top-10 h-44 w-44 rounded-full bg-blue-300/35 blur-3xl"
                 aria-hidden="true"
               />
               <div className="relative rounded-2xl border border-white/30 bg-white/90 p-7 shadow-[0_20px_40px_rgba(15,23,42,0.18)]">
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-sky-700">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-700">
                   Qualité visible
                 </p>
                 <p className="mt-3 text-2xl font-semibold text-slate-900">
@@ -337,7 +336,7 @@ export default function Home() {
 
         <section className="border-y border-slate-200 bg-white py-20">
           <div className="mx-auto w-full max-w-5xl px-6 text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-sky-700">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-700">
               Parlons de votre projet
             </p>
             <h2 className="mt-4 text-balance text-4xl font-semibold tracking-tight text-slate-900">
@@ -345,12 +344,12 @@ export default function Home() {
             </h2>
             <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-slate-600 sm:text-lg">
               Notre équipe est à votre disposition pour vous proposer une
-              solution adaptée. Nova Clean, l&apos;excellence au service de vos
-              espaces.
+              solution adaptée. Nova Clean Services, l&apos;excellence au
+              service de vos espaces.
             </p>
             <Button
               asChild
-              className="mt-8 h-11 rounded-full bg-slate-900 px-8 text-sm font-semibold text-white hover:bg-slate-800"
+              className="mt-8 h-11 rounded-full bg-blue-700 px-8 text-sm font-semibold text-white hover:bg-blue-800"
             >
               <a href="#contact">Demander un devis</a>
             </Button>
@@ -383,16 +382,21 @@ export default function Home() {
                 </h3>
                 <ul className="mt-4 space-y-3 text-sm text-slate-700">
                   <li className="flex items-center gap-3">
-                    <Phone className="size-4 text-sky-700" aria-hidden="true" />
-                    Numéro communiqué prochainement
+                    <Phone
+                      className="size-4 text-blue-700"
+                      aria-hidden="true"
+                    />
+                    <a href="tel:+41788096135" className="hover:underline">
+                      +41 78 809 61 35
+                    </a>
                   </li>
                   <li className="flex items-center gap-3">
-                    <Mail className="size-4 text-sky-700" aria-hidden="true" />
+                    <Mail className="size-4 text-blue-700" aria-hidden="true" />
                     info@novacleanservices.ch
                   </li>
                   <li className="flex items-center gap-3">
                     <MapPin
-                      className="size-4 text-sky-700"
+                      className="size-4 text-blue-700"
                       aria-hidden="true"
                     />
                     Suisse romande (siège à Yverdon-les-Bains)
@@ -411,8 +415,8 @@ export default function Home() {
                 </p>
               </article>
 
-              <article className="rounded-2xl border border-slate-200 bg-slate-900 p-6 text-white shadow-[0_10px_24px_rgba(15,23,42,0.2)]">
-                <h3 className="text-lg font-semibold">Nova Clean</h3>
+              <article className="rounded-2xl border border-blue-900 bg-blue-950 p-6 text-white shadow-[0_10px_24px_rgba(15,23,42,0.2)]">
+                <h3 className="text-lg font-semibold">Nova Clean Services</h3>
                 <p className="mt-2 text-sm text-slate-200">
                   Entreprise de nettoyage suisse romande.
                 </p>
@@ -456,14 +460,19 @@ export default function Home() {
               Contact
             </p>
             <ul className="mt-4 space-y-2 text-sm text-slate-400">
-              <li>Numéro communiqué prochainement</li>
+              <li>
+                <a href="tel:+41788096135" className="hover:text-white">
+                  +41 78 809 61 35
+                </a>
+              </li>
               <li>info@novacleanservices.ch</li>
               <li>Suisse romande</li>
             </ul>
           </div>
         </div>
         <p className="mx-auto mt-10 w-full max-w-6xl border-t border-slate-800 px-6 pt-6 text-xs text-slate-500">
-          © {new Date().getFullYear()} Nova Clean. Tous droits réservés.
+          © {new Date().getFullYear()} Nova Clean Services. Tous droits
+          réservés.
         </p>
       </footer>
     </div>

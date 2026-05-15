@@ -28,8 +28,8 @@ export function Section({
               className={cn(
                 "inline-flex rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em]",
                 inverted
-                  ? "border border-cyan-200/30 bg-cyan-300/10 text-cyan-200"
-                  : "border border-sky-200 bg-sky-50 text-sky-800",
+                  ? "border border-blue-200/30 bg-blue-300/10 text-blue-200"
+                  : "border border-blue-200 bg-blue-50 text-blue-800",
               )}
             >
               {eyebrow}

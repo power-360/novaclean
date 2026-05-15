@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Nova Clean | Nettoyage en Suisse romande",
+  title: "Nova Clean Services | Nettoyage en Suisse romande",
   description:
-    "Nova Clean propose des prestations de nettoyage pour particuliers, entreprises et régies en Suisse romande : fin de bail, conciergerie, locaux professionnels, chantiers, extérieurs et interventions exceptionnelles.",
+    "Nova Clean Services propose des prestations de nettoyage pour particuliers, entreprises et régies en Suisse romande : fin de bail, conciergerie, locaux professionnels, chantiers, extérieurs et interventions exceptionnelles.",
 };
 
 export default function RootLayout({

@@ -33,7 +33,16 @@ export type DetailedService = {
   shortIntro: string;
   paragraph: string;
   benefit: string;
+  imageSrc: string;
+  imageAlt: string;
 };
+
+export const navLinks = [
+  { label: "Accueil", href: "#accueil" },
+  { label: "À propos", href: "#a-propos" },
+  { label: "Services", href: "#services" },
+  { label: "Contact", href: "#contact" },
+];
 
 export type GalleryPhoto = {
   src: string;
@@ -43,12 +52,54 @@ export type GalleryPhoto = {
   creditHref: string;
 };
 
-export const navLinks = [
-  { label: "Accueil", href: "#accueil" },
-  { label: "À propos", href: "#a-propos" },
-  { label: "Services", href: "#services" },
-  { label: "Galerie", href: "#galerie" },
-  { label: "Contact", href: "#contact" },
+export const galleryPhotos: GalleryPhoto[] = [
+  {
+    src: "https://images.unsplash.com/photo-1774979161326-6ba6ed3a1864?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1800",
+    alt: "Équipe de nettoyage sur façade vitrée en hauteur.",
+    label: "Interventions spécialisées en extérieur",
+    creditLabel: "Adhitya Sibikumar / Unsplash",
+    creditHref:
+      "https://unsplash.com/photos/two-window-cleaners-work-on-a-tall-building-BXsBr9a_z7E",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1762008310482-ac087b26c1a2?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1800",
+    alt: "Nettoyage d'un espace d'entrée commercial.",
+    label: "Entretien régulier de sites professionnels",
+    creditLabel: "MAK / Unsplash",
+    creditHref:
+      "https://unsplash.com/photos/two-people-cleaning-outside-a-building-entrance-bgIMFj7i6Ec",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1707897283710-4beef9a1b066?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1800",
+    alt: "Agent en intervention avec un jet d'eau haute pression.",
+    label: "Nettoyage intensif et remise en état",
+    creditLabel: "The ProClean Team / Unsplash",
+    creditHref:
+      "https://unsplash.com/photos/a-man-is-cleaning-the-street-with-a-hose-DyYMrJYXE84",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1668600418929-118f4d7fd53a?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1800",
+    alt: "Professionnel en tenue de protection pour nettoyage technique.",
+    label: "Prestations techniques et zones sensibles",
+    creditLabel: "Toon Lambrechts / Unsplash",
+    creditHref:
+      "https://unsplash.com/photos/a-person-wearing-a-mask-and-gloves-3trrmy1-8bU",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1550963295-019d8a8a61c5?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1800",
+    alt: "Matériel de nettoyage professionnel prêt à l'emploi.",
+    label: "Équipement professionnel adapté",
+    creditLabel: "Crystal Chabot / Unsplash",
+    creditHref: "https://unsplash.com/photos/clear-spray-bottle-9gzU1mtTzWM",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1740511106124-625b02369494?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1800",
+    alt: "Intervention de nettoyage urbain sur voie extérieure.",
+    label: "Interventions exceptionnelles sur mesure",
+    creditLabel: "Jose Manuel Esp / Unsplash",
+    creditHref:
+      "https://unsplash.com/photos/a-man-in-a-yellow-and-black-uniform-is-cleaning-the-street-QC5CzfCxNkA",
+  },
 ];
 
 export const serviceCards: ServiceCardItem[] = [
@@ -164,6 +215,9 @@ export const detailedServices: DetailedService[] = [
       "Le nettoyage de fin de bail est une étape essentielle lors de la restitution d'un bien locatif. Il nécessite une attention particulière afin de garantir un logement impeccable, conforme aux attentes des régies et des propriétaires. Nous intervenons avec méthode et précision pour assurer une remise en état complète, en portant une attention soutenue à chaque détail.",
     benefit:
       "Bénéfice client : un résultat maîtrisé, un gain de temps considérable et une tranquillité d'esprit totale au moment de remettre les clés.",
+    imageSrc:
+      "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&fm=jpg&q=80&w=1400",
+    imageAlt: "Nettoyage professionnel d'un logement avant restitution.",
   },
   {
     id: "service-conciergerie",
@@ -174,6 +228,9 @@ export const detailedServices: DetailedService[] = [
       "Nous assurons l'entretien et la gestion quotidienne de vos résidences, bureaux et surfaces commerciales, avec une approche rigoureuse et un réel souci du détail. Notre objectif est de garantir des espaces propres, fonctionnels et agréables pour les occupants. Grâce à notre flexibilité, nous nous adaptons à chaque situation : contrats réguliers, interventions occasionnelles ou remplacement de concierge.",
     benefit:
       "Bénéfice client : une continuité de service irréprochable, même en cas d'absence.",
+    imageSrc:
+      "https://images.unsplash.com/photo-1762008310482-ac087b26c1a2?auto=format&fit=crop&fm=jpg&q=80&w=1400",
+    imageAlt: "Entretien de parties communes et accès d'immeuble.",
   },
   {
     id: "service-locaux",
@@ -183,6 +240,9 @@ export const detailedServices: DetailedService[] = [
       "Nous assurons l'entretien de tous types de locaux : bureaux, commerces, établissements médicaux, écoles et restaurants. Nos prestations incluent le nettoyage des sols et surfaces, l'entretien des sanitaires, le dépoussiérage et le maintien général de la propreté de vos espaces. Nous garantissons un service fiable, rigoureux et professionnel.",
     benefit:
       "Bénéfice client : une image professionnelle renforcée et un cadre de travail plus agréable pour tous.",
+    imageSrc:
+      "https://images.unsplash.com/photo-1550963295-019d8a8a61c5?auto=format&fit=crop&fm=jpg&q=80&w=1400",
+    imageAlt: "Matériel de nettoyage professionnel pour locaux d'entreprise.",
   },
   {
     id: "service-chantier",
@@ -193,6 +253,9 @@ export const detailedServices: DetailedService[] = [
       "Le nettoyage de fin de chantier permet de révéler pleinement la qualité de vos espaces avant leur livraison ou leur mise en service. Nous intervenons avec exigence afin de garantir un rendu parfaitement propre, soigné et prêt à être occupé.",
     benefit:
       "Bénéfice client : une livraison valorisée et des locaux immédiatement exploitables.",
+    imageSrc:
+      "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&fm=jpg&q=80&w=1400",
+    imageAlt: "Espace de chantier préparé pour une remise en état.",
   },
   {
     id: "service-toitures",
@@ -203,6 +266,9 @@ export const detailedServices: DetailedService[] = [
       "Avec le temps, mousses, lichens et salissures peuvent altérer l'apparence de la toiture et fragiliser sa structure. Nos interventions permettent d'éliminer efficacement ces dépôts tout en respectant les matériaux, afin de prolonger la durée de vie de votre toiture. Nous réalisons également le nettoyage de panneaux solaires pour optimiser leur rendement.",
     benefit:
       "Bénéfice client : une toiture protégée, plus durable et visuellement soignée.",
+    imageSrc:
+      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&fm=jpg&q=80&w=1400",
+    imageAlt: "Toiture entretenue par une équipe spécialisée.",
   },
   {
     id: "service-exterieurs",
@@ -212,6 +278,9 @@ export const detailedServices: DetailedService[] = [
       "Nous assurons l'entretien avec exigence afin de préserver la propreté, l'esthétique et l'harmonie de vos espaces extérieurs dans le temps. Chaque prestation est réalisée avec rigueur et précision, selon vos contraintes.",
     benefit:
       "Bénéfice client : des abords accueillants qui valorisent durablement votre bien.",
+    imageSrc:
+      "https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&fm=jpg&q=80&w=1400",
+    imageAlt: "Entretien professionnel d'espaces extérieurs.",
   },
   {
     id: "service-neige",
@@ -222,6 +291,9 @@ export const detailedServices: DetailedService[] = [
       "Nous intervenons avec réactivité pour le déneigement et le traitement des surfaces glissantes. Notre objectif est de garantir des accès dégagés, sûrs et praticables pour vos résidents, clients et collaborateurs.",
     benefit:
       "Bénéfice client : des déplacements plus sereins et une continuité d'activité renforcée.",
+    imageSrc:
+      "https://images.unsplash.com/photo-1517299321609-52687d1bc55a?auto=format&fit=crop&fm=jpg&q=80&w=1400",
+    imageAlt: "Accès extérieur sécurisé pendant la période hivernale.",
   },
   {
     id: "service-debarras",
@@ -232,6 +304,9 @@ export const detailedServices: DetailedService[] = [
       "Nous accompagnons les projets de déménagement ainsi que le débarras de logements ou de locaux professionnels. Chaque mission est réalisée avec soin et organisation pour vous faire gagner du temps.",
     benefit:
       "Bénéfice client : un processus simplifié, rapide et sans stress inutile.",
+    imageSrc:
+      "https://images.unsplash.com/photo-1600518464441-9306b00c4e8b?auto=format&fit=crop&fm=jpg&q=80&w=1400",
+    imageAlt: "Cartons et matériel préparés pour un déménagement.",
   },
   {
     id: "service-exceptionnel",
@@ -242,56 +317,9 @@ export const detailedServices: DetailedService[] = [
       "Nous proposons des prestations exceptionnelles, notamment après incendie, inondation ou autre sinistre. Chaque intervention est préparée avec méthode pour remettre les lieux en état dans les meilleurs délais, en coordination avec vos contraintes.",
     benefit:
       "Bénéfice client : une prise en charge rapide, structurée et rassurante dans les situations sensibles.",
-  },
-];
-
-export const galleryPhotos: GalleryPhoto[] = [
-  {
-    src: "https://images.unsplash.com/photo-1774979161326-6ba6ed3a1864?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1800",
-    alt: "Équipe de nettoyage sur façade vitrée en hauteur.",
-    label: "Interventions spécialisées en extérieur",
-    creditLabel: "Adhitya Sibikumar / Unsplash",
-    creditHref:
-      "https://unsplash.com/photos/two-window-cleaners-work-on-a-tall-building-BXsBr9a_z7E",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1762008310482-ac087b26c1a2?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1800",
-    alt: "Nettoyage d'un espace d'entrée commercial.",
-    label: "Entretien régulier de sites professionnels",
-    creditLabel: "MAK / Unsplash",
-    creditHref:
-      "https://unsplash.com/photos/two-people-cleaning-outside-a-building-entrance-bgIMFj7i6Ec",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1707897283710-4beef9a1b066?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1800",
-    alt: "Agent en intervention avec un jet d'eau haute pression.",
-    label: "Nettoyage intensif et remise en état",
-    creditLabel: "The ProClean Team / Unsplash",
-    creditHref:
-      "https://unsplash.com/photos/a-man-is-cleaning-the-street-with-a-hose-DyYMrJYXE84",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1668600418929-118f4d7fd53a?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1800",
-    alt: "Professionnel en tenue de protection pour nettoyage technique.",
-    label: "Prestations techniques et zones sensibles",
-    creditLabel: "Toon Lambrechts / Unsplash",
-    creditHref:
-      "https://unsplash.com/photos/a-person-wearing-a-mask-and-gloves-3trrmy1-8bU",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1550963295-019d8a8a61c5?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1800",
-    alt: "Matériel de nettoyage professionnel prêt à l'emploi.",
-    label: "Équipement professionnel adapté",
-    creditLabel: "Crystal Chabot / Unsplash",
-    creditHref: "https://unsplash.com/photos/clear-spray-bottle-9gzU1mtTzWM",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1740511106124-625b02369494?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1800",
-    alt: "Intervention de nettoyage urbain sur voie extérieure.",
-    label: "Interventions exceptionnelles sur mesure",
-    creditLabel: "Jose Manuel Esp / Unsplash",
-    creditHref:
-      "https://unsplash.com/photos/a-man-in-a-yellow-and-black-uniform-is-cleaning-the-street-QC5CzfCxNkA",
+    imageSrc:
+      "https://images.unsplash.com/photo-1668600418929-118f4d7fd53a?auto=format&fit=crop&fm=jpg&q=80&w=1400",
+    imageAlt: "Intervention technique avec équipement de protection.",
   },
 ];
 

@@ -108,7 +108,7 @@ export function ContactForm() {
           name="service"
           required
           defaultValue=""
-          className="h-11 w-full rounded-md border border-slate-300 bg-white px-3 text-sm text-slate-700 outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-100"
+          className="h-11 w-full rounded-md border border-slate-300 bg-white px-3 text-sm text-slate-700 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
         >
           <option value="" disabled>
             Sélectionnez un service
@@ -137,7 +137,7 @@ export function ContactForm() {
       <Button
         type="submit"
         disabled={isLoading}
-        className="h-11 rounded-full bg-slate-900 px-6 text-sm font-semibold hover:bg-slate-800"
+        className="h-11 rounded-full bg-blue-700 px-6 text-sm font-semibold hover:bg-blue-800"
       >
         {isLoading ? "Envoi en cours..." : "Envoyer"}
       </Button>
