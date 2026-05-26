@@ -32,7 +32,7 @@ function BrandMark({ dark = false }: { dark?: boolean }) {
     <div className="flex items-center gap-3">
       <div>
         <Image
-          src={`/logo.svg`}
+          src={`/logo.png`}
           alt="Logo Nova Clean Services"
           width={90}
           height={90}
