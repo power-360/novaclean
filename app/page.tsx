@@ -394,7 +394,7 @@ export default function Home() {
                   </li>
                   <li className="flex items-center gap-3">
                     <Mail className="size-4 text-blue-700" aria-hidden="true" />
-                    info@novacleanservices.ch
+                    info@novaclean-services.ch
                   </li>
                   <li className="flex items-center gap-3">
                     <MapPin
@@ -467,7 +467,7 @@ export default function Home() {
                   +41 78 809 61 35
                 </a>
               </li>
-              <li>info@novacleanservices.ch</li>
+              <li>info@novaclean-services.ch</li>
               <li>Suisse romande</li>
             </ul>
           </div>
