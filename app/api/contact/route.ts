@@ -57,7 +57,10 @@ export async function POST(request: Request) {
     !isValidEmail(email)
   ) {
     return NextResponse.json(
-      { message: "Données invalides. Vérifiez nom, email, téléphone, service et message." },
+      {
+        message:
+          "Données invalides. Vérifiez nom, email, téléphone, service et message.",
+      },
       { status: 400 },
     );
   }
@@ -65,7 +68,7 @@ export async function POST(request: Request) {
   const { error } = await resend.emails.send({
     from: fromEmail,
     to: [toEmail],
-    subject: `Nouveau message site vitrine - ${name}`,
+    subject: `Contact depuis le site internet - ${name}`,
     replyTo: email,
     react: ContactEmail({
       name,

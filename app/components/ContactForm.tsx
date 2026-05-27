@@ -19,10 +19,11 @@ export function ContactForm() {
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    const form = event.currentTarget;
     setStatus(null);
     setIsLoading(true);
 
-    const formData = new FormData(event.currentTarget);
+    const formData = new FormData(form);
     const payload = {
       name: String(formData.get("name") ?? ""),
       email: String(formData.get("email") ?? ""),
@@ -48,7 +49,7 @@ export function ContactForm() {
         type: "success",
         message: data.message ?? "Message envoyé avec succès.",
       });
-      event.currentTarget.reset();
+      form.reset();
     } catch (error) {
       setStatus({
         type: "error",
