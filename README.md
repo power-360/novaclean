@@ -28,6 +28,24 @@ Définir dans `.env.local`:
 - `RESEND_FROM_EMAIL`: expéditeur (doit être validé côté Resend en production)
 - `CONTACT_TO_EMAIL`: destinataire qui recevra les messages du formulaire
 
+Exemple:
+
+```env
+RESEND_API_KEY=re_xxxxxxxxx
+RESEND_FROM_EMAIL=info@power360.ch
+CONTACT_TO_EMAIL=info@novaclean-services.ch
+```
+
+`CONTACT_TO_EMAIL` doit contenir une adresse email valide. Pour envoyer le
+message à plusieurs destinataires, séparer les adresses par des virgules:
+
+```env
+CONTACT_TO_EMAIL=info@novaclean-services.ch,admin@novaclean-services.ch
+```
+
+Après toute modification du fichier `.env.local`, redémarrer le serveur Next
+pour que les nouvelles valeurs soient prises en compte.
+
 ## Points clés du boilerplate
 
 - Formulaire contact: `app/components/ContactForm.tsx`

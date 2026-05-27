@@ -44,6 +44,10 @@ function getSender(value: string) {
   return isValidEmail(value) ? `NovaClean Services <${value}>` : value;
 }
 
+function getEmailDomain(recipient: string) {
+  return getEmailAddress(recipient).split("@").at(1) ?? "invalid";
+}
+
 export async function POST(request: Request) {
   if (!resend) {
     return NextResponse.json(
@@ -105,21 +109,36 @@ export async function POST(request: Request) {
     );
   }
 
-  const { error } = await resend.emails.send({
-    from: sender,
-    to: recipients,
-    subject: `Contact depuis le site internet - ${name}`,
-    replyTo: email,
-    react: ContactEmail({
-      name,
-      email,
-      phone,
-      service,
-      message,
-    }),
-  });
+  let sendError: unknown = null;
 
-  if (error) {
+  try {
+    const { error } = await resend.emails.send({
+      from: sender,
+      to: recipients,
+      subject: `Contact depuis le site internet - ${name}`,
+      replyTo: email,
+      react: ContactEmail({
+        name,
+        email,
+        phone,
+        service,
+        message,
+      }),
+    });
+
+    sendError = error;
+  } catch (error) {
+    sendError = error;
+  }
+
+  if (sendError) {
+    console.error("Resend contact email failed", {
+      error: sendError,
+      fromDomain: getEmailDomain(sender),
+      toDomains: recipients.map(getEmailDomain),
+      hasReplyTo: Boolean(email),
+    });
+
     return NextResponse.json(
       { message: "Erreur lors de l'envoi de l'email. Veuillez réessayer." },
       { status: 500 },
