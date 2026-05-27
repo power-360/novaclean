@@ -12,8 +12,8 @@ type ContactPayload = {
 };
 
 const resendApiKey = process.env.RESEND_API_KEY;
-const toEmail = process.env.CONTACT_TO_EMAIL;
-const fromEmail = process.env.RESEND_FROM_EMAIL ?? "onboarding@resend.dev";
+const toEmail = process.env.CONTACT_TO_EMAIL ?? "info@novaclean-services.ch";
+const fromEmail = process.env.RESEND_FROM_EMAIL ?? "info@power360.ch";
 
 const resend = resendApiKey ? new Resend(resendApiKey) : null;
 
@@ -66,7 +66,7 @@ export async function POST(request: Request) {
   }
 
   const { error } = await resend.emails.send({
-    from: fromEmail,
+    from: `NovaClean Services <${fromEmail}>`,
     to: [toEmail],
     subject: `Contact depuis le site internet - ${name}`,
     replyTo: email,
