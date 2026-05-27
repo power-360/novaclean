@@ -12,7 +12,8 @@ type ContactPayload = {
 };
 
 const resendApiKey = process.env.RESEND_API_KEY;
-const toEmail = process.env.CONTACT_TO_EMAIL ?? "info@novaclean-services.ch";
+const contactToEmail =
+  process.env.CONTACT_TO_EMAIL ?? "info@novaclean-services.ch";
 const fromEmail = process.env.RESEND_FROM_EMAIL ?? "info@power360.ch";
 
 const resend = resendApiKey ? new Resend(resendApiKey) : null;
@@ -21,12 +22,51 @@ function isValidEmail(email: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
+function getEmailAddress(recipient: string) {
+  const trimmedRecipient = recipient.trim();
+  const namedRecipient = trimmedRecipient.match(/^[^<>]+<([^<>]+)>$/);
+
+  return (namedRecipient?.[1] ?? trimmedRecipient).trim();
+}
+
+function isValidRecipient(recipient: string) {
+  return isValidEmail(getEmailAddress(recipient));
+}
+
+function getRecipientList(value: string) {
+  return value
+    .split(",")
+    .map((email) => email.trim())
+    .filter(Boolean);
+}
+
+function getSender(value: string) {
+  return isValidEmail(value) ? `NovaClean Services <${value}>` : value;
+}
+
 export async function POST(request: Request) {
-  if (!resend || !toEmail) {
+  if (!resend) {
     return NextResponse.json(
       {
         message:
-          "Configuration manquante : RESEND_API_KEY et CONTACT_TO_EMAIL doivent être définies.",
+          "Configuration manquante : RESEND_API_KEY doit être définie.",
+      },
+      { status: 500 },
+    );
+  }
+
+  const recipients = getRecipientList(contactToEmail);
+  const sender = getSender(fromEmail);
+
+  if (
+    recipients.length === 0 ||
+    recipients.some((recipient) => !isValidRecipient(recipient)) ||
+    !isValidRecipient(sender)
+  ) {
+    return NextResponse.json(
+      {
+        message:
+          "Configuration email invalide : vérifiez CONTACT_TO_EMAIL et RESEND_FROM_EMAIL.",
       },
       { status: 500 },
     );
@@ -66,8 +106,8 @@ export async function POST(request: Request) {
   }
 
   const { error } = await resend.emails.send({
-    from: `NovaClean Services <${fromEmail}>`,
-    to: [toEmail],
+    from: sender,
+    to: recipients,
     subject: `Contact depuis le site internet - ${name}`,
     replyTo: email,
     react: ContactEmail({
