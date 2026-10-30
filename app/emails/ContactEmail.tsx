@@ -15,10 +15,20 @@ export type ContactEmailProps = {
   email: string;
   phone: string;
   service: string;
+  date?: string;
+  location?: string;
   message: string;
 };
 
-export function ContactEmail({ name, email, phone, service, message }: ContactEmailProps) {
+export function ContactEmail({
+  name,
+  email,
+  phone,
+  service,
+  date,
+  location,
+  message,
+}: ContactEmailProps) {
   return (
     <Html>
       <Head />
@@ -50,9 +60,19 @@ export function ContactEmail({ name, email, phone, service, message }: ContactEm
             <Text style={{ margin: "0 0 16px" }}>
               <strong>Téléphone :</strong> {phone}
             </Text>
-            <Text style={{ margin: "0 0 16px" }}>
+            <Text style={{ margin: "0 0 8px" }}>
               <strong>Service :</strong> {service}
             </Text>
+            {date ? (
+              <Text style={{ margin: "0 0 8px" }}>
+                <strong>Date souhaitée :</strong> {date}
+              </Text>
+            ) : null}
+            {location ? (
+              <Text style={{ margin: "0 0 16px" }}>
+                <strong>Lieu d&apos;intervention :</strong> {location}
+              </Text>
+            ) : null}
 
             <Hr style={{ borderColor: "#e5e7eb", margin: "16px 0" }} />
 

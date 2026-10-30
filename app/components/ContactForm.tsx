@@ -29,6 +29,8 @@ export function ContactForm() {
       email: String(formData.get("email") ?? ""),
       phone: String(formData.get("phone") ?? ""),
       service: String(formData.get("service") ?? ""),
+      date: String(formData.get("date") ?? ""),
+      location: String(formData.get("location") ?? ""),
       message: String(formData.get("message") ?? ""),
     };
 
@@ -120,6 +122,27 @@ export function ContactForm() {
             </option>
           ))}
         </select>
+      </div>
+
+      <div className="grid gap-2 sm:grid-cols-2 sm:gap-4">
+        <div className="grid gap-2">
+          <Label htmlFor="date">Date souhaitée</Label>
+          <Input
+            id="date"
+            name="date"
+            type="date"
+            className="h-11 border-slate-300 bg-white"
+          />
+        </div>
+        <div className="grid gap-2">
+          <Label htmlFor="location">Lieu d&apos;intervention</Label>
+          <Input
+            id="location"
+            name="location"
+            placeholder="Ville ou adresse"
+            className="h-11 border-slate-300 bg-white"
+          />
+        </div>
       </div>
 
       <div className="grid gap-2">

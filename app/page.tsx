@@ -8,16 +8,22 @@ import {
   MapPin,
   Phone,
   ShieldCheck,
+  Star,
 } from "lucide-react";
 
 import { ContactForm } from "@/components/ContactForm";
 import { HeaderScrollAccent } from "@/components/landing/HeaderScrollAccent";
 import { Section } from "@/components/landing/Section";
+import { SocialBar } from "@/components/landing/SocialBar";
+import { Testimonials } from "@/components/landing/Testimonials";
 import {
   detailedServices,
   navLinks,
   galleryPhotos,
+  googleRating,
   serviceCards,
+  socialLinks,
+  testimonials,
   valueItems,
 } from "@/components/landing/data";
 import {
@@ -63,6 +69,7 @@ function BrandMark({ dark = false }: { dark?: boolean }) {
 export default function Home() {
   return (
     <div className="bg-slate-50 text-slate-900">
+      <SocialBar items={socialLinks} />
       <header className="sticky top-0 z-40 border-b border-slate-800 bg-slate-950/95 text-white shadow-[0_12px_30px_rgba(2,6,23,0.22)] backdrop-blur">
         <div className="mx-auto flex h-20 w-full max-w-6xl items-center justify-between px-6">
           <a href="#accueil" className="flex items-center gap-3">
@@ -81,12 +88,24 @@ export default function Home() {
             ))}
           </nav>
 
-          <Button
-            asChild
-            className="hidden h-10 rounded-full bg-white px-5 text-sm font-semibold text-slate-950 hover:bg-slate-200 sm:inline-flex"
-          >
-            <a href="#contact">Demander un devis</a>
-          </Button>
+          <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+            <Button
+              asChild
+              className="hidden h-10 shrink-0 rounded-full bg-white px-5 text-sm font-semibold text-slate-950 hover:bg-slate-200 sm:inline-flex"
+            >
+              <a href="#contact">Demander un devis</a>
+            </Button>
+            <Button
+              asChild
+              size="icon"
+              aria-label="Appeler directement"
+              className="h-10 w-10 shrink-0 rounded-full bg-orange-500 text-white hover:bg-orange-400"
+            >
+              <a href="tel:+41788096135">
+                <Phone className="size-4" aria-hidden="true" />
+              </a>
+            </Button>
+          </div>
         </div>
         <nav className="border-t border-slate-800 lg:hidden">
           <div className="mx-auto flex w-full max-w-6xl items-center gap-5 overflow-x-auto px-6 py-3">
@@ -109,18 +128,22 @@ export default function Home() {
           id="accueil"
           className="relative overflow-hidden border-b border-slate-800 bg-slate-950"
         >
-          <div
-            className="absolute -top-24 right-0 h-72 w-72 rounded-full bg-blue-300/25 blur-3xl"
-            aria-hidden="true"
-          />
-          <div
-            className="absolute left-1/3 top-40 h-80 w-80 rounded-full bg-blue-500/15 blur-3xl"
-            aria-hidden="true"
-          />
-          <div className="mx-auto grid w-full max-w-6xl gap-12 px-6 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:py-24">
-            <div className="space-y-8">
+          <div className="absolute inset-0" aria-hidden="true">
+            <Image
+              src="/team-alex-ilyas.jpg"
+              alt=""
+              fill
+              priority
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/55 to-slate-950/10" />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-slate-950/20" />
+          </div>
+          <div className="relative mx-auto w-full max-w-6xl px-6 py-24 lg:py-32">
+            <div className="max-w-2xl space-y-8">
               <p className="inline-flex rounded-full border border-blue-300/30 bg-blue-300/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-blue-100">
-                Entreprise de nettoyage suisse romande
+                Entreprise de nettoyage à Yverdon-les-Bains et dans le Nord
+                vaudois
               </p>
               <h1 className="text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
                 L&apos;excellence au service de vos espaces
@@ -128,7 +151,8 @@ export default function Home() {
               <p className="max-w-2xl text-pretty text-base leading-relaxed text-slate-200 sm:text-lg">
                 Bienvenue chez Nova Clean Services. Nous accompagnons
                 particuliers, entreprises et régies dans l&apos;entretien et la
-                mise en valeur de leurs espaces partout en Suisse romande.
+                mise en valeur de leurs espaces à Yverdon-les-Bains, dans le
+                Nord vaudois et dans toute la région et ses alentours.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Button
@@ -171,36 +195,15 @@ export default function Home() {
                   Qualité constante
                 </p>
               </div>
+              <div className="inline-flex items-center gap-3 rounded-2xl border border-white/15 bg-white/10 px-4 py-3 backdrop-blur-md">
+                <span className="inline-flex items-center rounded-full border border-blue-200/30 bg-blue-300/15 px-3 py-1 text-xs font-semibold text-blue-100">
+                  {serviceCards.length} services
+                </span>
+                <p className="text-sm text-slate-200">
+                  Par Alex &amp; Ilyas, l&apos;équipe Nova Clean Services
+                </p>
+              </div>
             </div>
-
-            <aside className="animate-fade-up rounded-3xl border border-white/15 bg-white/10 p-6 backdrop-blur-sm sm:p-8">
-              <div className="rounded-2xl border border-slate-700/70 bg-slate-950/70 p-6">
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-200">
-                  Nova Clean Services
-                </p>
-                <h2 className="mt-3 text-2xl font-semibold text-white">
-                  Des espaces impeccables, sans compromis
-                </h2>
-                <p className="mt-3 text-sm leading-relaxed text-slate-200">
-                  Une équipe engagée pour entretenir, valoriser et protéger vos
-                  environnements au quotidien.
-                </p>
-              </div>
-              <div className="mt-5 grid gap-4 sm:grid-cols-2">
-                <div className="rounded-2xl border border-white/15 bg-white/5 p-5">
-                  <p className="text-3xl font-semibold text-blue-300">
-                    {serviceCards.length}
-                  </p>
-                  <p className="mt-1 text-sm text-slate-200">
-                    services complets
-                  </p>
-                </div>
-                <div className="rounded-2xl border border-white/15 bg-white/5 p-5">
-                  <p className="text-3xl font-semibold text-blue-300">24h</p>
-                  <p className="mt-1 text-sm text-slate-200">réponse devis</p>
-                </div>
-              </div>
-            </aside>
           </div>
         </section>
 
@@ -208,7 +211,7 @@ export default function Home() {
           id="a-propos"
           eyebrow="Présentation"
           title="Nova Clean Services, votre partenaire propreté au quotidien"
-          description="Chez Nova Clean Services, nous accompagnons particuliers, entreprises et régies dans l'entretien et la mise en valeur de leurs espaces. Grâce à une approche professionnelle et un souci constant du détail, nous garantissons des résultats à la hauteur de vos exigences. Notre engagement : vous offrir des environnements propres, sains et parfaitement entretenus, tout en vous simplifiant le quotidien."
+          description="Chez Nova Clean Services, nous accompagnons particuliers, entreprises et régies d'Yverdon-les-Bains, du Nord vaudois et des alentours dans l'entretien et la mise en valeur de leurs espaces. Grâce à une approche professionnelle et un souci constant du détail, nous garantissons des résultats à la hauteur de vos exigences. Notre engagement : vous offrir des environnements propres, sains et parfaitement entretenus, tout en vous simplifiant le quotidien."
         >
           <div className="grid gap-6 md:grid-cols-3">
             {[
@@ -282,6 +285,21 @@ export default function Home() {
           title="Notre différence"
         >
           <ValueGrid items={valueItems} />
+        </Section>
+
+        <Section
+          id="avis"
+          eyebrow="Avis clients"
+          title="Ils nous font confiance dans le Nord vaudois"
+          description="Particuliers, entreprises et régies d'Yverdon-les-Bains et de la région nous confient l'entretien de leurs espaces."
+          className="bg-gradient-to-b from-slate-100/60 to-slate-50"
+        >
+          <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-900">
+            <Star className="size-4 fill-current text-amber-400" aria-hidden="true" />
+            {googleRating.score.toFixed(1).replace(".", ",")} sur Google · {googleRating.count}{" "}
+            avis vérifiés
+          </div>
+          <Testimonials items={testimonials} />
         </Section>
 
         <Section
@@ -404,6 +422,20 @@ export default function Home() {
                     Suisse romande (siège à Yverdon-les-Bains)
                   </li>
                 </ul>
+                <div className="mt-5 flex items-center gap-3">
+                  {socialLinks.map((social) => (
+                    <a
+                      key={social.label}
+                      href={social.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={social.label}
+                      className="flex size-10 items-center justify-center rounded-full border border-slate-200 bg-slate-50 text-slate-700 transition-colors hover:bg-blue-700 hover:text-white"
+                    >
+                      <social.icon className="size-4" aria-hidden="true" />
+                    </a>
+                  ))}
+                </div>
               </article>
 
               <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_8px_20px_rgba(15,23,42,0.06)]">
@@ -411,9 +443,10 @@ export default function Home() {
                   Zone d&apos;intervention
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                  Nous intervenons pour particuliers, entreprises et régies sur
-                  toute la Suisse romande et ses environs, avec une organisation
-                  flexible selon vos contraintes.
+                  Nous intervenons pour particuliers, entreprises et régies à
+                  Yverdon-les-Bains, dans le Nord vaudois, dans la région et
+                  ses alentours, avec une organisation flexible selon vos
+                  contraintes.
                 </p>
               </article>
 
@@ -437,6 +470,20 @@ export default function Home() {
               entreprises et régies. Un service fiable, soigné et orienté
               résultat.
             </p>
+            <div className="mt-5 flex items-center gap-3">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={social.label}
+                  className="flex size-9 items-center justify-center rounded-full border border-slate-700 text-slate-300 transition-colors hover:bg-white hover:text-slate-950"
+                >
+                  <social.icon className="size-4" aria-hidden="true" />
+                </a>
+              ))}
+            </div>
           </div>
 
           <div>

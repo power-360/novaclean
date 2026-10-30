@@ -3,6 +3,9 @@ import {
   Building2,
   HardHat,
   Home,
+  Instagram,
+  Linkedin,
+  MessageCircle,
   MoveRight,
   ShieldAlert,
   Shovel,
@@ -37,10 +40,25 @@ export type DetailedService = {
   imageAlt: string;
 };
 
+export type SocialLink = {
+  label: string;
+  href: string;
+  icon: LucideIcon;
+};
+
+export type Testimonial = {
+  name: string;
+  service: string;
+  date: string;
+  quote: string;
+  rating: number;
+};
+
 export const navLinks = [
   { label: "Accueil", href: "#accueil" },
   { label: "À propos", href: "#a-propos" },
   { label: "Services", href: "#services" },
+  { label: "Avis clients", href: "#avis" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -317,3 +335,78 @@ export const detailedServices: DetailedService[] = [
 export const serviceSelectOptions = detailedServices.map(
   (service) => service.title,
 );
+
+export const socialLinks: SocialLink[] = [
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/novaclean.services.sarl/",
+    icon: Instagram,
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/company/https-www.novaclean-services.ch/",
+    icon: Linkedin,
+  },
+  {
+    label: "WhatsApp",
+    href: "https://wa.me/41788096135",
+    icon: MessageCircle,
+  },
+];
+
+// Avis clients vérifiés, issus de la fiche Google Business de Nova Clean Services (4.9/5, 23 avis).
+export const googleRating = {
+  score: 4.9,
+  count: 23,
+};
+
+export const testimonials: Testimonial[] = [
+  {
+    name: "Nathan Berruex",
+    service: "Fin de bail",
+    date: "il y a 3 mois",
+    quote:
+      "Super prestation pour mon nettoyage de fin de bail, tout était impeccable. Équipe pro et efficace, je recommande !",
+    rating: 5,
+  },
+  {
+    name: "Samuel Daucourt",
+    service: "Entretien extérieur",
+    date: "il y a 3 mois",
+    quote:
+      "La terrasse est comme neuve et les vitres sont impeccables. Tout a été réalisé avec professionnalisme, minutie et dans les délais annoncés.",
+    rating: 5,
+  },
+  {
+    name: "Ihssane Korti",
+    service: "Déménagement",
+    date: "il y a 1 mois",
+    quote:
+      "Excellente expérience avec Nova Clean Services ! Réactivité, disponibilité et qualité de communication au rendez-vous. Travail réalisé avec sérieux et professionnalisme.",
+    rating: 5,
+  },
+  {
+    name: "Rania",
+    service: "Bureaux et lieux de travail",
+    date: "il y a 2 mois",
+    quote:
+      "Une magnifique équipe, jeune, motivée et dynamique. Un tout grand merci pour votre travail précis et rigoureux.",
+    rating: 5,
+  },
+  {
+    name: "Marie Roh",
+    service: "Fin de bail",
+    date: "il y a 2 mois",
+    quote:
+      "Travail impeccable et soigné jusque dans les moindres détails. Une équipe rapide, efficace et très professionnelle.",
+    rating: 5,
+  },
+  {
+    name: "Adrien Bodmer",
+    service: "Toitures & panneaux solaires",
+    date: "il y a 3 mois",
+    quote:
+      "J'ai fait appel à Nova Clean pour le nettoyage de ma toiture et des panneaux solaires. Le travail a été parfaitement réalisé et l'équipe est très agréable.",
+    rating: 5,
+  },
+];

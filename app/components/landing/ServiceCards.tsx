@@ -10,14 +10,14 @@ export function ServiceGrid({ items }: { items: ServiceCardItem[] }) {
         <a
           key={item.id}
           href={item.href}
-          className="group animate-fade-up rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_8px_24px_rgba(15,23,42,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-[0_16px_36px_rgba(37,99,235,0.16)]"
+          className="group animate-fade-up flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_8px_24px_rgba(15,23,42,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-[0_16px_36px_rgba(37,99,235,0.16)]"
           style={{ animationDelay: `${index * 80}ms` }}
         >
           <div className="mb-5 inline-flex rounded-xl border border-blue-100 bg-blue-50 p-3 text-blue-800">
             <item.icon className="size-5" aria-hidden="true" />
           </div>
           <h3 className="text-lg font-semibold text-slate-900 group-hover:text-blue-900">{item.title}</h3>
-          <p className="mt-3 text-sm leading-relaxed text-slate-600">{item.description}</p>
+          <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-600">{item.description}</p>
           <p className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-blue-800">
             Voir les détails
             <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -34,14 +34,14 @@ export function ValueGrid({ items }: { items: ValueItem[] }) {
       {items.map((item, index) => (
         <article
           key={item.title}
-          className="animate-fade-up rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_8px_20px_rgba(15,23,42,0.05)]"
+          className="animate-fade-up flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_8px_20px_rgba(15,23,42,0.05)]"
           style={{ animationDelay: `${index * 70}ms` }}
         >
           <div className="mb-4 inline-flex rounded-lg bg-blue-950 p-2.5 text-blue-200">
             <item.icon className="size-4" aria-hidden="true" />
           </div>
           <h3 className="text-base font-semibold text-slate-900">{item.title}</h3>
-          <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.description}</p>
+          <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-600">{item.description}</p>
         </article>
       ))}
     </div>

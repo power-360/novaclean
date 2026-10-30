@@ -8,6 +8,8 @@ type ContactPayload = {
   email?: string;
   phone?: string;
   service?: string;
+  date?: string;
+  location?: string;
   message?: string;
 };
 
@@ -91,6 +93,8 @@ export async function POST(request: Request) {
   const email = payload.email?.trim() ?? "";
   const phone = payload.phone?.trim() ?? "";
   const service = payload.service?.trim() ?? "";
+  const date = payload.date?.trim() ?? "";
+  const location = payload.location?.trim() ?? "";
   const message = payload.message?.trim() ?? "";
 
   if (
@@ -122,6 +126,8 @@ export async function POST(request: Request) {
         email,
         phone,
         service,
+        date,
+        location,
         message,
       }),
     });
